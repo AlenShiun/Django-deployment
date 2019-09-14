@@ -10,7 +10,7 @@ This project use three docker-compose to acheive deployment
 
 ## Getting Started
 
-1. Install docker and docker-compose(the version of docker-compose should >= 1.18) on your machine
+1. Install docker and docker-compose( >= 1.18) on your machine
 2. Clone this project
 3. Copy your django project folder into django_project/
 4. Setup config.sh
