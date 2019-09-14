@@ -1,6 +1,7 @@
 version: '3.5'
 services:
     nginx:
+        container_name: nginx-container
         build: ./nginx
         restart: always
         # ports:
@@ -20,7 +21,8 @@ services:
             - LETSENCRYPT_EMAIL=
 
     web_project:
-        build: ./web_project
+        container_name: web-container
+        build: web_project
         restart: always
         volumes:
             - project_data:/project
@@ -30,9 +32,6 @@ services:
         environment:
             - DB_NAME=web_project
             - DB_HOST=db
-
-volumes:
-    project_data:
 
 networks:
     proxy:
