@@ -33,6 +33,10 @@ echo "[DB] Generate docker-compose for postgres success"
 # ==================================================
 DJANGO_PROJECT_DIR_NAME="django_project"
 DJANGO_PROJECT_DIR="`pwd`/${DJANGO_PROJECT_DIR_NAME}"
+
+echo "[Django] Create symbol link for django project..."
+ln -s `pwd`/../${DJANGO_PROJECT_NAME} ${DJANGO_PROJECT_DIR}/${DJANGO_PROJECT_NAME}
+
 echo "[Django] Generate docker-compose for django project..."
 
 # Copy docker-compose example and set container name of nginx
@@ -47,7 +51,7 @@ fi
 echo "[Django] Set container name success"
 
 # Copy neccesary configs from eample of docker and django files such as Dockerfile, docker-entrypoint and uwsgi, ...etc.
-cp -r ${DJANGO_PROJECT_DIR}/docker_example/* ${DJANGO_PROJECT_DIR}/${DJANGO_PROJECT_NAME}/
+cp -n -r ${DJANGO_PROJECT_DIR}/docker_example/* ${DJANGO_PROJECT_DIR}/${DJANGO_PROJECT_NAME}/
 chmod +x ${DJANGO_PROJECT_DIR}/${DJANGO_PROJECT_NAME}/docker-entrypoint.sh
 
 # Set up run time name of container, volume and HOST name

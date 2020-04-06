@@ -11,16 +11,17 @@ This project use three docker-compose to acheive deployment
 ## Getting Started
 
 1. Install docker and docker-compose( >= 1.18) on your machine
-2. Clone this project
-3. Copy your django project folder into django_project/
-4. Setup config.sh
+2. Create folder and cd to its e.g. mkdir sample; cd sample
+3. Clone this project
+4. Copy your django project folder into root folder
+5. Setup config.sh
     * Keep LETS_ENCRYPT_TEST_RUN=1 to get stage certification for testing your domain or set LETS_ENCRYPT_TEST_RUN=0 to request real certification from Let's encrypt
     * DJANGO_PROJECT_NAME: Project name of Django
     * HOST_NAME: Your domain name
     * MAINTAINER: Your email
-5. Run init_all.sh
-6. Run run_all.sh
-7. Open your browser and go to web site with HOST_NAME
+6. Run init_all.sh
+7. Run run_all.sh
+8. Open your browser and go to web site with HOST_NAME
 
 ## Built With
 
